@@ -1,0 +1,24 @@
+{
+  "name": "healthstock-templete",
+  "version": "1.0.0",
+  "description": "Templete feito para que todas as aplicações tenham a mesma base",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/JoaoGabrielOliveira/healthstock.git"
+  },
+  "keywords": [
+    "templete",
+    "base",
+    "project"
+  ],
+  "author": "Equipe HealthStock",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JoaoGabrielOliveira/healthstock/issues"
+  },
+  "homepage": "https://github.com/JoaoGabrielOliveira/healthstock#readme"
+}
