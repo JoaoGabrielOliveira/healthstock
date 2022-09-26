@@ -1,3 +1,4 @@
 [submodule "healthstock-login"]
 	path = healthstock-login
 	url = git@github.com:JoaoGabrielOliveira/healthstock-login.git
+	branch = main
