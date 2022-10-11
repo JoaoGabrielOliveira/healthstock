@@ -2,3 +2,7 @@
 	path = healthstock-login
 	url = git@github.com:JoaoGabrielOliveira/healthstock-login.git
 	branch = main
+[submodule "healthstock-products"]
+	path = healthstock-products
+	url = https://github.com/joaogabrieloliveira/healthstock-products
+	branch = main
