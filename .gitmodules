@@ -6,3 +6,11 @@
 	path = healthstock-products
 	url = https://github.com/joaogabrieloliveira/healthstock-products
 	branch = main
+[submodule "healthstock-events"]
+	path = healthstock-events
+	url = https://github.com/joaogabrieloliveira/healthstock-events
+	branch = main
+[submodule "healthstock-frontend"]
+	path = healthstock-frontend
+	url = git@github.com:LeonardoRuizB/Projeto_HealthStock_Front.git
+	branch = master
