@@ -24,3 +24,11 @@ O sistema de autenticação é feito por esse serviço, de forma descentralizada
 ## Serviço de Produtos
 
 ## Serviço de Pedidos
+
+# Utils
+
+### Para atualizar todos os submodules
+
+```shell
+git submodule update --remote
+```
