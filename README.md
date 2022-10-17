@@ -23,9 +23,22 @@ O sistema de autenticação é feito por esse serviço, de forma descentralizada
 
 ## Serviço de Produtos
 
+O sistema para gerenciamento dos produtos ofertados para nossa aplicação. Dentre suas principais funções é o cadastro de produtos e retorno dos produtos cadastrados
+
+[Click aqui para o repositório do serviço de produtos](https://github.com/JoaoGabrielOliveira/healthstock-products).
+
 ## Serviço de Pedidos
 
 # Utils
+
+### Lista de todos os endpoints dos serviços para POSTMAN
+
+1. Baixe esse repositório
+2. Baixe e instale o software **Postman**
+3. Localize o botão " *import* " ou "Importar" no **Postman**
+3. Selecione o arquivo ' *postman_collection.json* '
+4. _Coloque para rodar_ a aplicação que deseja testar
+
 
 ### Para atualizar todos os submodules
 
