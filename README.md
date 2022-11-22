@@ -10,6 +10,12 @@ Uma aplicação com o intuido de criar um ambiente de comprar e venda de produto
 - Gustavo Henrique Ribeiro Meneses - RA: 821135489
 - João Gabriel de Oliveira Santos Conceição - RA: 821135788
 
+## [Video de apresentação](https://youtu.be/c-FXixcUwjE)
+
+Video de apresentação do projeto HealthStock
+
+
+
 # Arquitetura 🏗️
 
 O sistema é dividido em microsserviços com propositos diferentes, cada um com uma importante funcionalidade.
