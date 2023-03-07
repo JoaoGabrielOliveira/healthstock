@@ -1,0 +1,1169 @@
+{
+	"info": {
+		"_postman_id": "413ed085-a5fa-4c43-94e0-3912e6ca3ac5",
+		"name": "A3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11957920"
+	},
+	"item": [
+		{
+			"name": "Events",
+			"item": [
+				{
+					"name": "Get all services working",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:10000/",
+							"host": [
+								"localhost"
+							],
+							"port": "10000",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post an info event",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"origin\":\"login\",\r\n    \"host\":\"localhost:8080\",\r\n    \"message\":\"Efeituando login\",\r\n    \"level\":\"info\",\r\n    \"data\": {\r\n        \"user\":{\r\n            \"id\":1, \"email\":\"joao@gmail.com\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:10000/",
+							"host": [
+								"localhost"
+							],
+							"port": "10000",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post an error event",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"origin\":\"login\",\r\n    \"host\":\"localhost:8080\",\r\n    \"message\":\"Acesso negado\",\r\n    \"level\":\"error\",\r\n    \"data\": {\r\n        \"exception\":{ }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:10000/",
+							"host": [
+								"localhost"
+							],
+							"port": "10000",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product Service",
+			"item": [
+				{
+					"name": "Categoty",
+					"item": [
+						{
+							"name": "Exemplos",
+							"item": [
+								{
+									"name": "Material de escritório",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\":\"Material de Escritório\",\r\n    \"description\": \"Materiais usados em escritórios.\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8090/category",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8090",
+											"path": [
+												"category"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Medicamentos",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "    {\r\n        \"name\":\"Outros\",\r\n        \"description\": \"Mais variados tipos de medicamentos\"\r\n    }",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8090/category",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8090",
+											"path": [
+												"category"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Get all categories",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/category",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get one category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/category/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"category",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Save categoty",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\r\n        \"name\":\"Material de Hospitalar\",\r\n        \"description\": \"Materiais usados comumente em hospitais.\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/category",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"category"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "Salvar product (Caneta Azul)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Caneta Azul\",\r\n    \"description\": \"Canetinha azul\",\r\n    \"categoryId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/product",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"product"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Salvar product (Cadeira)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Cadeira de Estritório\",\r\n    \"description\": \"Feita para sentar\",\r\n    \"categoryId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/product",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"product"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all products",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Cadeira\",\r\n    \"description\": \"Feita para sentar\",\r\n    \"category_id\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/product?limit=25&offset=0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"product"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "25"
+										},
+										{
+											"key": "offset",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search products",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Cadeira\",\r\n    \"description\": \"Feita para sentar\",\r\n    \"category_id\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/product?limit=10&offset=0&search=a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"product"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "search",
+											"value": "a"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all products from Category",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Cadeira\",\r\n    \"description\": \"Feita para sentar\",\r\n    \"category_id\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/product?category=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"product"
+									],
+									"query": [
+										{
+											"key": "category",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Count all products",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/product?total",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"product"
+									],
+									"query": [
+										{
+											"key": "total",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upload product profile",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "caneta.webp"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8090/product/1/profile",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"product",
+										"1",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Salvar product (Remedio para Gripe)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Remédio para Gripe\",\r\n    \"description\": \"Remédio para tratamento para sintomas da gripe\",\r\n    \"categoryId\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/product",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"product"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Package Type",
+					"item": [
+						{
+							"name": "Post package type (Pacote)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Pacote\",\r\n    \"description\": \"Pacote ou embalagem que contém poucas unidades\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/packagetype",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"packagetype"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post package type (Caixa)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Caixa\",\r\n    \"description\": \"Caixa de papelão\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/packagetype",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"packagetype"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get package type",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Pacote\",\r\n    \"description\": \"Pacote\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/packagetype/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"packagetype",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Supplier Catalog",
+					"item": [
+						{
+							"name": "Post Supplier Catalog (Canete Pic)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Canete Azul - Bic - Pacote com 6 unidades\",\r\n    \"description\": \"Caixa de caneta azul bic com 6 unidades cada pacote.\",\r\n    \"supplierId\":1,\r\n    \"productId\": 1,\r\n    \"packageTypeId\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/suppliercatalog/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"suppliercatalog",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post Supplier Catalog (Canete Pic Pacote)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Canete Azul - Bic - Pacote com 3 unidades\",\r\n    \"description\": \"Caixa de caneta azul bic com 3 unidades cada pacote.\",\r\n    \"supplierId\":1,\r\n    \"productId\": 1,\r\n    \"packageTypeId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/suppliercatalog/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"suppliercatalog",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all profiles of catalog",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Cadeira\",\r\n    \"description\": \"Feita para sentar\",\r\n    \"category_id\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/suppliercatalog/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"suppliercatalog",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post Supplier Catalog (Cinegripe)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Cinegripe - 21 capsulas\",\r\n    \"description\": \"Embalagem que contem 21 capsulas de cinegripe\",\r\n    \"supplierId\":2,\r\n    \"productId\": 3,\r\n    \"packageTypeId\":1,\r\n    \"price\": 5.99\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/suppliercatalog/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"suppliercatalog",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Supplier Catalog Photos",
+					"item": [
+						{
+							"name": "Get photos of Supplier Catalog 1",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/suppliercatalog/1/photos/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"suppliercatalog",
+										"1",
+										"photos",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST photos of Supplier Catalog 1",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "length",
+											"value": "3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8090/suppliercatalog/1/photos/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"suppliercatalog",
+										"1",
+										"photos",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get ONE photo of Supplier Catalog 1",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/suppliercatalog/1/photos/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"suppliercatalog",
+										"1",
+										"photos",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST photos to Supplier Catalog",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "length",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "photo0",
+											"type": "file",
+											"src": "Canetas 2.webp"
+										},
+										{
+											"key": "photo1",
+											"type": "file",
+											"src": "Caneta 2.jpg"
+										},
+										{
+											"key": "photo2",
+											"type": "file",
+											"src": "Canetas.webp"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8090/suppliercatalog/2/photos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"suppliercatalog",
+										"2",
+										"photos"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Marketplace",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/marketplace?search=Pacote&limit=1&offset=0&category=1&category=2",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"marketplace"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Pacote"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "category",
+									"value": "1"
+								},
+								{
+									"key": "category",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Marketplace Product by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/marketplace/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"marketplace",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "VITAMINA C-10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login Service",
+			"item": [
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "Get All",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get one",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/users/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete one",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/users/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":2,\r\n    \"email\":\"leoruiz@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Save",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"deise@gmail.com\",\r\n    \"password\":\"1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Sign up",
+					"item": [
+						{
+							"name": "Cadastrar fornecedor",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idUser\": 1,\r\n    \"cnpj\": \"48816724000134\",\r\n    \"cnae\": \"123456\",\r\n    \"companyName\": \"Fralner - Produtos Hospitalares\",\r\n    \"addresses\":[{\r\n        \"cep\": \"08570731\",\r\n        \"number\": 731,\r\n        \"complement\": \"\"\r\n    }],\r\n    \"contacts\":[{\r\n        \"responsibleArea\":\"Área de Vendas\",\r\n        \"name\": \"Fernanda\",\r\n        \"details\": \"11-999999999\"\r\n    }]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/cadastro/fornecedor",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"cadastro",
+										"fornecedor"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cadastrar comprador",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idUser\": 2,\r\n    \"cnpj\": \"12236125000102\",\r\n    \"companyName\": \"Clinica - Seduzp\",\r\n    \"addresses\":[{\r\n        \"cep\": \"08570731\",\r\n        \"number\": 731,\r\n        \"complement\": \"\"\r\n    }],\r\n    \"contacts\": [{\r\n        \"responsibleArea\":\"Contratos\",\r\n        \"name\": \"Fernanda\",\r\n        \"details\": \"11-999999999\"\r\n    }]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/cadastro/comprador",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"cadastro",
+										"comprador"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"deise@gmail.com\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 7 ,\r\n    \"motivation\": \"\",\r\n    \"userType\": \"supplier\",\r\n    \"linkToRedirect\": \"http://localhost:4200/login/cadastrar/fornecedor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/sendEmail",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sendEmail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/address",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"address"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
